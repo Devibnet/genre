@@ -1,0 +1,311 @@
+/* Modern Article Card — Edukasi */
+.edu-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--slate-200);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  height: 100%;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(20, 83, 45, 0.04) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(20, 83, 45, 0.25);
+  box-shadow:
+    0 20px 40px -12px rgba(6, 46, 26, 0.12),
+    0 8px 16px -8px rgba(6, 46, 26, 0.08);
+}
+
+.edu-card:hover::before {
+  opacity: 1;
+}
+
+.edu-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Image */
+.edu-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+}
+
+.edu-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.edu-card:hover .edu-card-media img {
+  transform: scale(1.06);
+}
+
+.edu-card-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6, 46, 26, 0.55) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.edu-card:hover .edu-card-media-overlay {
+  opacity: 1;
+}
+
+.edu-card-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary);
+  border: 1px solid rgba(20, 83, 45, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.edu-card-read-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.edu-card:hover .edu-card-read-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.edu-card-read-hint svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Body */
+.edu-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 22px 24px;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.edu-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--slate-500);
+  letter-spacing: 0.02em;
+}
+
+.edu-card-meta-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.edu-card-title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--transition-fast);
+}
+
+.edu-card:hover .edu-card-title {
+  color: var(--primary);
+}
+
+.edu-card-desc {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.edu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--slate-100);
+}
+
+.edu-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: gap var(--transition-fast);
+}
+
+.edu-card:hover .edu-card-cta {
+  gap: 10px;
+}
+
+.edu-card-cta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.edu-card:hover .edu-card-cta svg {
+  transform: translateX(3px);
+}
+
+.edu-card-accent-bar {
+  width: 32px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  opacity: 0.5;
+  transition: width var(--transition-normal), opacity var(--transition-normal);
+}
+
+.edu-card:hover .edu-card-accent-bar {
+  width: 40px;
+  opacity: 1;
+}
+
+/* Featured variant */
+.edu-card--featured {
+  flex-direction: row;
+  min-height: 240px;
+}
+
+.edu-card--featured .edu-card-media {
+  flex: 0 0 27%;
+  aspect-ratio: unset;
+  min-height: 180px;
+}
+
+.edu-card--featured .edu-card-body {
+  flex: 1;
+  justify-content: center;
+  padding: 27px 30px;
+  gap: 14px;
+}
+
+.edu-card--featured .edu-card-tag {
+  position: static;
+  align-self: flex-start;
+  background: var(--accent-light);
+  color: var(--accent-hover);
+  border-color: rgba(217, 119, 6, 0.2);
+}
+
+.edu-card--featured .edu-card-title {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  -webkit-line-clamp: 3;
+}
+
+.edu-card--featured .edu-card-desc {
+  font-size: 0.95rem;
+  -webkit-line-clamp: 4;
+}
+
+.edu-card--featured .edu-card-link {
+  flex-direction: row;
+}
+
+.edu-card--featured .edu-card-cta {
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  margin-top: 8px;
+  align-self: flex-start;
+  transition: background var(--transition-fast), transform var(--transition-fast), gap var(--transition-fast);
+}
+
+.edu-card--featured:hover .edu-card-cta {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  gap: 10px;
+}
+
+.edu-card--featured .edu-card-cta svg {
+  color: var(--white);
+}
+
+.edu-card--featured .edu-card-footer {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .edu-card--featured {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .edu-card--featured .edu-card-media {
+    flex: unset;
+    aspect-ratio: 16 / 9;
+    min-height: unset;
+  }
+
+  .edu-card--featured .edu-card-body {
+    padding: 24px;
+  }
+
+  .edu-card--featured .edu-card-link {
+    flex-direction: column;
+  }
+}

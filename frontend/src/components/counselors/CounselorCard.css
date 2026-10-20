@@ -1,0 +1,109 @@
+.counselor-card {
+  height: 100%;
+  transition: all var(--transition-normal);
+}
+
+.counselor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.counselor-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: var(--slate-100);
+}
+
+.counselor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.counselor-card:hover .counselor-img {
+  transform: scale(1.05);
+}
+
+/* Initials fallback */
+.counselor-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 100%);
+}
+
+.counselor-avatar-fallback span {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.03em;
+}
+
+.counselor-body {
+  text-align: center;
+  align-items: center;
+}
+
+.counselor-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 2px;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.counselor-meta {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.counselor-desc {
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.counselor-inactive {
+  opacity: 0.65;
+  filter: grayscale(0.8);
+}
+
+.counselor-inactive:hover {
+  transform: none;
+}
+
+.counselor-status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(4px);
+}
+
+.counselor-chat-btn {
+  font-weight: 600;
+  font-size: 0.875rem;
+}

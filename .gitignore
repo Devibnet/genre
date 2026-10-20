@@ -1,0 +1,26 @@
+@"
+.env
+.env.*
+!.env.example
+node_modules/
+"@ | Set-Content .gitignore
+# Environment variables
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# Node dependencies and build
+node_modules/
+dist/

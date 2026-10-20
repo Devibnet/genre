@@ -1,0 +1,248 @@
+/* ============================================================
+   Footer.css — Clean, Professional, & Authentic Institutional Design
+   ============================================================ */
+
+.site-footer {
+  background-color: #0b1d13;
+  color: #94a3b8;
+  border-top: 1px solid #163624;
+  padding-top: 48px;
+  font-family: var(--font-sans);
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1.4fr;
+  gap: 48px;
+  padding-bottom: 40px;
+}
+
+/* ── Block 1: Brand & About ── */
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.footer-brand-emblem {
+  width: 38px;
+  height: 38px;
+  background-color: #15803d;
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.footer-logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.footer-brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-title {
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.footer-brand-sub {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.footer-about {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 420px;
+}
+
+.footer-social-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-social-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #cbd5e1;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #12281b;
+  border: 1px solid #1e3f2c;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.social-btn:hover {
+  background-color: #15803d;
+  border-color: #15803d;
+  color: #ffffff;
+}
+
+/* ── Block 2 & 3: Headings & Navigation ── */
+.footer-heading {
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-menu li a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footer-menu li a:hover {
+  color: #4ade80;
+}
+
+/* ── Block 3: Contact Info ── */
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contact-icon {
+  color: #4ade80;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.contact-text strong {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.contact-text span {
+  color: #94a3b8;
+}
+
+.contact-text a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-text a:hover {
+  color: #4ade80;
+  text-decoration: underline;
+}
+
+/* ── Bottom Bar ── */
+.footer-bottom-bar {
+  border-top: 1px solid #142e1f;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copyright-text {
+  color: #64748b;
+  font-size: 0.8125rem;
+  margin: 0;
+}
+
+.instansi-text {
+  color: #64748b;
+  font-size: 0.8125rem;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .footer-brand-block {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding-top: 36px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-brand-block {
+    grid-column: span 1;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
