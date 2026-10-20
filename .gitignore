@@ -1,9 +1,3 @@
-@"
-.env
-.env.*
-!.env.example
-node_modules/
-"@ | Set-Content .gitignore
 # Environment variables
 .env
 .env.*
@@ -24,3 +18,7 @@ venv/
 # Node dependencies and build
 node_modules/
 dist/
+dist-ssr/
+
+# Vercel project linkage and build cache
+.vercel/
